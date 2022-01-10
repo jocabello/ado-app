@@ -1,17 +1,14 @@
 import React from 'react'
 
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { TeamOutlined, FundProjectionScreenOutlined, GoldOutlined, BuildOutlined } from '@ant-design/icons';
-import { EmployeeList } from './components/employee/EmployeeList';
+import { TeamOutlined, GoldOutlined, BuildOutlined } from '@ant-design/icons';
+import { EmployeeList } from './components/employees/EmployeeList';
 
 
 export const AdoApp = () => {
-
-    const { SubMenu } = Menu;
+    
     const { Header, Content, Sider } = Layout;
 
-
-    
     return (
         <Layout>
             <Header className="header">
