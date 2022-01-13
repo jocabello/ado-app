@@ -5,6 +5,6 @@ import { AdoApp } from './AdoApp';
 import './styles/styles.scss'
 
 ReactDOM.render(
-  <AdoApp />,
+    <AdoApp />,
   document.getElementById('root')
 );
