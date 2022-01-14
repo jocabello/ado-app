@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 
 import { Button, Modal, Form, Input, Select, DatePicker } from 'antd';
+import { startAddEmployee } from '../../state/actions/employeesActions';
+import { useDispatch } from 'react-redux';
 
 export const EmployeeModal = () => {
     const [visible, setVisible] = useState(false);
+
+    const dispatch = useDispatch();
   
     const onCreate = (values) => {
-      console.log('Received values of form: ', values);
+    //   console.log('Received values of form: ', values);
+      dispatch(startAddEmployee(values));
       setVisible(false);
     };
   

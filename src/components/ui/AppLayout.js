@@ -46,7 +46,7 @@ export const AppLayout = () => {
                     minHeight: 280,
                 }}
                 >
-                    <EmployeeList/>                
+                    <EmployeeList />                
                 </Content>
             </Layout>
             </Layout>
