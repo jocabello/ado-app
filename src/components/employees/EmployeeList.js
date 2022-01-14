@@ -28,7 +28,12 @@ export const EmployeeList = () => {
                                 <Statistic title="Estado civil" value={record.maritalStatus} />
                                 </Col>
                                 <Col span={4}>
-                                <Statistic title="Fecha nacimiento" value={record.dob} />
+                                <Statistic 
+                                    title="Fecha nacimiento" 
+                                    value={
+                                        record.dob.getDate() + "/" + record.dob.getMonth()+1 + "/" + record.dob.getFullYear()  
+                                    }
+                                />
                                 </Col>
                                 <Col span={4}>
                                 <Statistic title="Comuna" value={record.address.comuna} />
@@ -43,10 +48,10 @@ export const EmployeeList = () => {
                                 <Statistic title="Previsión" value={record.pensionSystem} />
                                 </Col>
                                 <Col span={4}>
-                                <Statistic title="Fono personal" value={record.personalContact} />
+                                <Statistic title="Fono personal" value={record.personalContact+" "} />
                                 </Col>
                                 <Col span={4}>
-                                <Statistic title="Fono emergencia" value={record.emergencyContact} />
+                                <Statistic title="Fono emergencia" value={record.emergencyContact+" "} />
                                 </Col>
                             </Row>
                         </>
@@ -59,7 +64,11 @@ export const EmployeeList = () => {
                     title="Edad"
                     dataIndex="dob"
                     key="dob"
-
+                    render={dob => (
+                        <>
+                            { Math.abs(((new Date(Date.now() - dob.getTime())).getUTCFullYear()) - 1970) }
+                        </>
+                    )}
                 />
                 <Column title="RUT" dataIndex="rutId" key="rutId" />
                 <Column

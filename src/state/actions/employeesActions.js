@@ -11,9 +11,10 @@ export const startAddEmployee = (employee) => {
         const region = 'region 5';
 
         const newEmployee = {
+            ...employee,
             key: idNewEmployee,
             uid: idNewEmployee,
-            dob: Date(employee.dob),
+            dob: employee.dob._d,
             address:{
                 streetName: employee.streetName,
                 comuna: comuna,
@@ -24,13 +25,12 @@ export const startAddEmployee = (employee) => {
             nationality: 'Chilena',
             personalContact: '85729456',
             emergencyContact: '93847134',
-            siteTag: [],
-            ...employee
+            siteTag: []
         }
 
         console.log(newEmployee);
 
-        // dispatch(AddEmployee(newEmployee));
+        dispatch(AddEmployee(newEmployee));
     }
 }
 

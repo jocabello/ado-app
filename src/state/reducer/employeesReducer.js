@@ -7,7 +7,7 @@ const initialState = [
         names: 'Andrián Roberto',
         lastNames: 'Martinex Lara',
         rutId: '22.334.334-1',
-        dob: "1980-01-05T05:32:58.484Z",
+        dob: new Date(),
         address: {
             streetName: 'Av. Mata 8733',
             comuna: 'Santiago',
@@ -27,7 +27,7 @@ const initialState = [
         names: 'Le Pipo',
         lastNames: 'Ramirez Figueroa',
         rutId: '12.345.678-9',
-        dob: "1975-01-05T05:32:58.484Z",
+        dob: new Date(),
         address: {
             streetName: 'Pje Las Calilas 123-A',
             comuna: 'San Bernardo',

@@ -12,7 +12,7 @@ export const EmployeeModal = () => {
     const onCreate = (values) => {
     //   console.log('Received values of form: ', values);
       dispatch(startAddEmployee(values));
-      setVisible(false);
+    //   setVisible(false);
     };
   
     return (
