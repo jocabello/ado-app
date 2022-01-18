@@ -1,15 +1,14 @@
 import React from 'react'
 
-import { AppLayout } from './components/ui/AppLayout';
 import { Provider } from 'react-redux';
 import store from './state/store';
-
+import { AppRouter } from './components/router/AppRouter';
 
 export const AdoApp = () => {
 
     return (
         <Provider store={store}>
-            <AppLayout />
+            <AppRouter />
         </Provider>
     )
 }
