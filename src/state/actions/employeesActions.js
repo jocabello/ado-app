@@ -14,7 +14,7 @@ export const startAddEmployee = (employee) => {
             ...employee,
             key: idNewEmployee,
             uid: idNewEmployee,
-            dob: employee.dob._d,
+            dob: employee.dob._d.toString(),
             address:{
                 streetName: employee.streetName,
                 comuna: comuna,
@@ -34,7 +34,7 @@ export const startAddEmployee = (employee) => {
     }
 }
 
-export const AddEmployee = (employee) => ({
+const AddEmployee = (employee) => ({
     type: types.employeeAdd,
     payload: employee
 })

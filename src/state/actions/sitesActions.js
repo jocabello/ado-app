@@ -1,0 +1,29 @@
+import { types } from "../../types/types";
+
+
+export const startAddSite = (site) => {
+    return (dispatch) => {
+
+        const idNewSite = 'MR8K8N4334P689F'
+
+        const newSite = {
+            // key: idNewSite,
+            uid: idNewSite,
+            name: site.name,
+            address: {
+                streetName: site.streetName,
+                comuna: site.comuna,
+                region: site.region
+            }
+        }
+
+        // console.log(newSite);
+
+        dispatch(addSite(newSite));
+    }
+}
+
+const addSite = (site) => ({
+    type: types.sitesAdd,
+    payload: site
+})

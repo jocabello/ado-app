@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Row } from 'antd';
 import { TeamOutlined, GoldOutlined, BuildOutlined } from '@ant-design/icons';
 
 import { EmployeeList } from '../employees/EmployeeList';
@@ -11,14 +11,17 @@ export const AppRouter = () => {
     const { Header, Footer, Sider, Content } = Layout;
     
     return (
-        <Layout>
+        <Layout style={{ minHeight: '100vh' }}>
             <Header>
                 <div className="logo" />
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                    <Menu.Item key="1">Iniciar sesión</Menu.Item>
-                    <Menu.Item key="2">Registrarse</Menu.Item>
-                    <Menu.Item key="3">Cerrar sesión</Menu.Item>
-                </Menu>
+                <Row justify="end">
+                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                        <Menu.Item key="1">Iniciar sesión</Menu.Item>
+                        <Menu.Item key="2">Registrarse</Menu.Item>
+                        <Menu.Item key="3">Cerrar sesión</Menu.Item>
+                    </Menu>
+
+                </Row>
             </Header>
             <Layout>
                 <Sider>
@@ -40,9 +43,9 @@ export const AppRouter = () => {
                     </Menu>
                 </Sider>
 
-                <Content style={{ padding: '0 24px 24px' }}>
-                    <div style={{ margin: '16px 0' }}>
-                        <Routes >
+                <Content style={{ padding: '0 24px 24px', margin: '16px 0' }}>
+                    <div>
+                        <Routes>
                             <Route path="/" element={<EmployeeList />} />
                             <Route path="/sites" element={<SitesList />} />
                             <Route path="/employees" element={<EmployeeList />} />
@@ -51,7 +54,7 @@ export const AppRouter = () => {
                     </div>
                 </Content>
             </Layout>
-            <Footer>Footer</Footer>
+            <Footer></Footer>
         </Layout>
                     
 
