@@ -93,7 +93,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                     label="Nombre"
                     rules={[{required: true, message: 'El nombre es obligatorio'}]}
                 >
-                    <Input />
+                    <Input placeholder="Nombre"/>
                 </Form.Item>
 
                 <Form.Item
@@ -103,6 +103,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                 >
                     <Input placeholder="Ejemplo: Avenida Las Torres 431 depto 505-A"/>
                 </Form.Item>
+                
 
                 {/* <Form.Item 
                     label="Región / Comuna"
@@ -146,7 +147,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                     <Form.Item
                         name="region"
                         noStyle
-                        rules={[{ required: true, message: 'Province is required' }]}
+                        rules={[{ required: true, message: 'La región es requerida' }]}
                     >
                         <Select 
                             
@@ -163,7 +164,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                     <Form.Item
                         name="comuna"
                         noStyle
-                        rules={[{ required: true, message: 'Street is required' }]}
+                        rules={[{ required: true, message: 'La comuna es obligatoria' }]}
                     >
                         <Select 
                                     
@@ -179,6 +180,15 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                     </Form.Item>
                     </Input.Group>
                 </Form.Item>
+
+
+                <Form.Item
+                    name="description"
+                    label="Descripción"
+                >
+                    <Input placeholder="Descripción de la obra"/>
+                </Form.Item>
+
 
 
                 {/* <Form.Item name="description" label="Description">

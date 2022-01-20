@@ -10,6 +10,7 @@ export const startAddSite = (site) => {
             // key: idNewSite,
             uid: idNewSite,
             name: site.name,
+            description: site.description,
             address: {
                 streetName: site.streetName,
                 comuna: site.comuna,

@@ -64,8 +64,8 @@ export const EmployeeList = () => {
         },
     ];
 
-    console.log(employees);
-    console.log(employees[0].dob.toString());
+    // console.log(employees);
+    // console.log(employees[0].dob.toString());
     
     return (
         <div>

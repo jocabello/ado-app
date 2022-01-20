@@ -18,6 +18,11 @@ export const SitesList = () => {
             key: 'name',
         },
         {
+            title: 'Descripción',
+            dataIndex: 'description',
+            key: 'description'
+        },
+        {
             title: 'Dirección',
             dataIndex: 'address',
             key: "uid",

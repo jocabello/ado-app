@@ -5,6 +5,7 @@ const initialState = [
         // key: '897fj23ffn5ing0f',
         uid: '897fj23ffn5ing0f',
         name: 'Lo Vial',
+        description: 'pasarela peatonal',
         address: {
             streetName: 'Ejercito 931',
             comuna: 'Estación Central',
@@ -15,6 +16,7 @@ const initialState = [
         // key: '3af23f23ffn5ing0f',
         uid: '3af23f23ffn5ing0f',
         name: 'Cine Paque Arauco',
+        description: 'Estructura salas 4, 5 y 6',
         address: {
             streetName: 'Av. Pdte. Kennedy 5413',
             comuna: 'Las Condes',

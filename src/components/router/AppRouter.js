@@ -15,13 +15,13 @@ export const AppRouter = () => {
             <Header>
                 <div className="logo" />
                 <Row justify="end">
+                </Row>
                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
                         <Menu.Item key="1">Iniciar sesión</Menu.Item>
                         <Menu.Item key="2">Registrarse</Menu.Item>
                         <Menu.Item key="3">Cerrar sesión</Menu.Item>
                     </Menu>
 
-                </Row>
             </Header>
             <Layout>
                 <Sider>
