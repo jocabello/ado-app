@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import { Button, Modal, Form, Input, Select, DatePicker } from 'antd';
+import { Button, Modal, Form, Input, Select } from 'antd';
 import { useDispatch } from 'react-redux';
-import { startAddSite } from '../../state/actions/sitesActions';
+import { startAddCompany } from '../../state/actions/companiesActions';
 
-export const SitesModal = () => {
+export const CompanyModal = () => {
 
     const [visible, setVisible] = useState(false);
 
@@ -12,7 +12,7 @@ export const SitesModal = () => {
   
     const onCreate = (values) => {
     //   console.log('Received values of form: ', values);
-      dispatch(startAddSite(values));
+      dispatch(startAddCompany(values));
       setVisible(false);
     };
 
@@ -25,7 +25,7 @@ export const SitesModal = () => {
                     setVisible(true);
                 }}
             >
-                Crear Obra
+                Crear Empresa
             </Button>
             <CollectionCreateForm
                 visible={visible}
@@ -64,7 +64,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
     return (
         <Modal
         visible={visible}
-        title="Crear nueva Obra"
+        title="Crear nueva Empresa"
         okText="Crear"
         cancelText="Cancelar"
         onCancel={onCancel}
@@ -94,6 +94,14 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                     rules={[{required: true, message: 'El nombre es obligatorio'}]}
                 >
                     <Input placeholder="Nombre"/>
+                </Form.Item>
+
+                <Form.Item
+                    name="rutId"
+                    label="RUT"
+                    rules={[{required: true, message: 'El RUT es obligatorio'}]}
+                >
+                    <Input placeholder="RUT"/>
                 </Form.Item>
 
                 <Form.Item
@@ -147,7 +155,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                     name="description"
                     label="Descripción"
                 >
-                    <Input placeholder="Descripción de la obra"/>
+                    <Input placeholder="Descripción de la empresa"/>
                 </Form.Item>
 
 

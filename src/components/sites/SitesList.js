@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Table, Tag, Statistic, Row, Col  } from 'antd';
+import { Table } from 'antd';
 import { SitesModal } from './SitesModal'
 import { useSelector } from 'react-redux';
 
@@ -13,7 +13,7 @@ export const SitesList = () => {
     
     const columns = [
         {
-            title: 'Name',
+            title: 'Nombre',
             dataIndex: 'name',
             key: 'name',
         },

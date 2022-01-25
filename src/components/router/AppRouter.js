@@ -6,6 +6,7 @@ import { TeamOutlined, GoldOutlined, BuildOutlined } from '@ant-design/icons';
 
 import { EmployeeList } from '../employees/EmployeeList';
 import { SitesList } from '../sites/SitesList';
+import { CompaniesList } from '../companies/CompaniesList';
 
 export const AppRouter = () => {
     const { Header, Footer, Sider, Content } = Layout;
@@ -38,7 +39,7 @@ export const AppRouter = () => {
                             <Link to="/sites">Obras</Link>
                         </Menu.Item>
                         <Menu.Item icon={<BuildOutlined />} key="3">
-                            Empresa
+                            <Link to="/companies">Empresa</Link>
                         </Menu.Item> 
                     </Menu>
                 </Sider>
@@ -49,6 +50,7 @@ export const AppRouter = () => {
                             <Route path="/" element={<EmployeeList />} />
                             <Route path="/sites" element={<SitesList />} />
                             <Route path="/employees" element={<EmployeeList />} />
+                            <Route path="/companies" element={<CompaniesList />} />
                             {/* <Route path="invoices" element={<Invoices />} /> */}
                         </Routes>
                     </div>

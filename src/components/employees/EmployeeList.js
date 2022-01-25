@@ -13,7 +13,7 @@ export const EmployeeList = () => {
 
     const columns = [
         {
-            title: 'Name',
+            title: 'Nombre',
             dataIndex: 'names',
             key: 'names',
         },
