@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { Button, Modal, Form, Input, Select, DatePicker } from 'antd';
-import { useDispatch } from 'react-redux';
+import { Button, Modal, Form, Input, Select } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 import { startAddSite } from '../../state/actions/sitesActions';
 
 export const SitesModal = () => {
@@ -60,6 +60,10 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
     const onSecondCityChange = value => {
         setSecondCity(value);
     };
+
+    const [...name] = useSelector(state => state.companies)
+    const arrNames = name.map(site => site.name);
+    const companiesNames = arrNames.map(name => (<Option key={name}>{name}</Option>));
 
     return (
         <Modal
@@ -149,6 +153,20 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
                 >
                     <Input placeholder="Descripción de la obra"/>
                 </Form.Item>
+
+                <Form.Item
+                            name="companyTag"
+                            label="Empresa relacionada"
+                        >
+                            <Select
+                                mode="multiple"
+                                allowClear
+                                style={{ width: '100%' }}
+                                placeholder="Please select"
+                            >
+                                {companiesNames}
+                            </Select>
+                        </Form.Item>
 
 
             </Form>

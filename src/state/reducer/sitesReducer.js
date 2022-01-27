@@ -10,7 +10,8 @@ const initialState = [
             streetName: 'Ejercito 931',
             comuna: 'Estación Central',
             region: 'Santiago'
-        }
+        },
+        companyTag: ['ABC Construcciones']
     },
     {
         // key: '3af23f23ffn5ing0f',
@@ -21,7 +22,8 @@ const initialState = [
             streetName: 'Av. Pdte. Kennedy 5413',
             comuna: 'Las Condes',
             region: 'Santiago'
-        }
+        },
+        companyTag: ['ABC Construcciones']
     }
 ]
 

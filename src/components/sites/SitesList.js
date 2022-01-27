@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Table } from 'antd';
+import { Table, Tag } from 'antd';
 import { SitesModal } from './SitesModal'
 import { useSelector } from 'react-redux';
 
@@ -23,11 +23,27 @@ export const SitesList = () => {
             key: 'description'
         },
         {
+            title: 'Empresa',
+            dataIndex: 'companyTag',
+            key: 'companyTag',
+            render: (companyTag) => (
+                <>
+                {
+                    companyTag.map(tag => (
+                        <Tag color="blue" key={tag}>
+                            {tag}
+                        </Tag>
+                    ))
+                }
+                </>
+            )
+        },
+        {
             title: 'Dirección',
             dataIndex: 'address',
             key: "uid",
             render: (address) => <span>{address.streetName + ", " + address.comuna + ", " + address.region}</span>
-        }
+        },
     ];
 
     return (

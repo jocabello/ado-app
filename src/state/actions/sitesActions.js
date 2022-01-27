@@ -15,7 +15,8 @@ export const startAddSite = (site) => {
                 streetName: site.streetName,
                 comuna: site.comuna,
                 region: site.region
-            }
+            },
+            companyTag: site.companyTag? site.companyTag: []
         }
 
         // console.log(newSite);
