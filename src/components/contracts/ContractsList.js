@@ -1,5 +1,7 @@
 
-import { Table } from 'antd';
+import { Table, Button } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
+
 // import axios from 'axios';
 import React from 'react'
 import { useSelector } from 'react-redux';
@@ -36,6 +38,14 @@ export const ContractsList = () => {
         contract.companyName = companies.find(company => company.uid === contract.companyUid).name
     });
 
+    const generateContract = (contract) => {
+        const cleanContract = JSON.parse(JSON.stringify(contract))
+        delete cleanContract.employeeName;
+        delete cleanContract.siteName;
+        delete cleanContract.companyName;
+        console.log(cleanContract);
+    }
+
     const columns = [
         {
             title: 'Trabajador',
@@ -52,9 +62,40 @@ export const ContractsList = () => {
             dataIndex: 'companyName',
             key: 'companyName'
         },
+        {
+            title: 'Sueldo bruto',
+            dataIndex: 'netIncome',
+            key: 'netIncome'
+        },
+        {
+            title: 'Cargo',
+            dataIndex: 'jobTitle',
+            kay: 'jobTitle'
+        },
+        {
+            title: 'Fecha inicio',
+            dataIndex: 'initialDate',
+            key: 'initialDate',
+            render: initialDate => (
+                <>
+                    { (new Date(initialDate).getDate()) + "/" + (new Date(initialDate).getMonth()+1) + "/" + (new Date(initialDate).getFullYear()) }
+                </>
+            )
+        },
+        {
+            title: 'Contrato',
+            key: 'contract',
+            render: contract => (
+                <Button
+                    type="primary"
+                    shape="round" icon={<DownloadOutlined />}
+                    onClick={() => { generateContract(contract)  }}
+                >
+                Generar PDF
+                </Button>
+            )
+        }
     ];
-
-
 
     return (
       <div>
