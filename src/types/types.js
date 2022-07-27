@@ -6,6 +6,8 @@ export const types = {
     sitesAdd: '[SITES] Add new site',
     sitesDelete: '[SITES] Delete site',
 
-    companyAdd: '[COMPANY] Add new company'
+    companyAdd: '[COMPANY] Add new company',
+
+    contractAdd: '[CONTRACT] Add new contract'
 
 }

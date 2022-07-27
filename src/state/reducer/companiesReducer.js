@@ -5,10 +5,10 @@ const initialState = [
     {
         uid: '9f8f2h9382f239fn298f',
         name: 'Patagonia',
-        rutId: '76288461-9',
+        rutId: '76332332-9',
         description: '',
         address: {
-            streetName: 'Holanda 12',
+            streetName: 'Holanda 28',
             comuna: 'Providencia',
             region: 'Santiago'
         }

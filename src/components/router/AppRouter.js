@@ -2,11 +2,12 @@ import React from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 
 import { Layout, Menu, Row } from 'antd';
-import { TeamOutlined, GoldOutlined, BuildOutlined } from '@ant-design/icons';
+import { TeamOutlined, GoldOutlined, BuildOutlined, FileAddOutlined } from '@ant-design/icons';
 
 import { EmployeeList } from '../employees/EmployeeList';
 import { SitesList } from '../sites/SitesList';
 import { CompaniesList } from '../companies/CompaniesList';
+import { ContractsList } from '../contracts/ContractsList';
 
 export const AppRouter = () => {
     const { Header, Footer, Sider, Content } = Layout;
@@ -39,7 +40,10 @@ export const AppRouter = () => {
                             <Link to="/sites">Obras</Link>
                         </Menu.Item>
                         <Menu.Item icon={<BuildOutlined />} key="3">
-                            <Link to="/companies">Empresa</Link>
+                            <Link to="/companies">Empresas</Link>
+                        </Menu.Item> 
+                        <Menu.Item icon={<FileAddOutlined />} key="4">
+                            <Link to="/contracts">Contratos</Link>
                         </Menu.Item> 
                     </Menu>
                 </Sider>
@@ -51,6 +55,7 @@ export const AppRouter = () => {
                             <Route path="/sites" element={<SitesList />} />
                             <Route path="/employees" element={<EmployeeList />} />
                             <Route path="/companies" element={<CompaniesList />} />
+                            <Route path="/contracts" element={<ContractsList /> } />
                             {/* <Route path="invoices" element={<Invoices />} /> */}
                         </Routes>
                     </div>
